@@ -1,0 +1,50 @@
+{{deptData}}
+{{skillData}}
+
+<div class="container">
+        <h1>EMPLOYEE FORM</h1>
+        <form (ngSubmit)="clickme()">
+          <div class="form-group">
+            <label for="name">EMPLOYEE NAME</label>
+            <input type="text" class="form-control" id="name" name="name" [formControl]="empName">
+          </div>
+    
+          <div class="form-group">
+            <label for="email">EMPLOYEE SALARY</label>
+            <input type="text" class="form-control"  id="salary" name="salary" [formControl]="empSalary">
+          </div>
+    
+          <div class="form-group">
+                <label for="department">CHOOSE DEPARTMENT:</label>
+                <select class="form-control" id="department">
+                    <option *ngFor="let dept of deptData" [value]="dept.departmentId">{{dept.departmentName}}</option>
+                </select>
+              </div>
+
+          <div class="form-group">
+            <label for="phone">STREET</label>
+            <input type="text" class="form-control"  id="street" name="street" [formControl]="street">
+          </div>
+          <div class="form-group">
+                <label for="phone">CITY</label>
+                <input type="text" class="form-control"  id="city" name="city" [formControl]="city">
+          </div>
+          <div class="form-group">
+                <label for="phone">STATE</label>
+                <input type="text" class="form-control"  id="state" name="state" [formControl]="state">
+            </div>
+              <div class="form-group">
+                    <label for="phone">COUNTRY</label>
+                    <input type="text" class="form-control"  id="country" name="country" [formControl]="country">
+                  </div>
+                  <div class="form-group">
+                        <label for="skills">CHOOSE SKILLS:   </label>
+                        <span *ngFor="let skill of skillData">
+                        <input type="checkbox" [value]="skill.skillId">{{skill.skillName}}
+                        </span>
+                      </div>
+
+          <button type="submit" class="btn btn-md btn-success">Submit</button>
+    
+        </form>
+    </div>

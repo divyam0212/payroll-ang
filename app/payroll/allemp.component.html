@@ -1,0 +1,30 @@
+<button (click)="a()">CLICK ME</button><br><br>
+{{empData}}
+
+<div>
+    <a routerLink="/register">Register Component</a>
+    <table class="table table-bordered" style="width: 100%;">
+        <tr *ngFor="let emp of empData">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empSalary}}</td>
+            <td>{{emp.department.departmentId}}</td>
+            <td>{{emp.department.departmentName}}</td>
+            <td>{{emp.department.departmentLocation}}</td>
+            <td>{{emp.address.addressId}}</td>
+            <td>{{emp.address.street}}</td>
+            <td>{{emp.address.city}}</td>
+            <td>{{emp.address.state}}</td>
+            <td>{{emp.address.country}}</td>
+            <span *ngFor="let skills of emp.skillsList">
+                <td>{{skills.skillId}}</td>
+                <td>{{skills.skillName}}</td>
+            </span>
+           <td><button (click)="test1(emp.empId)">EDIT</button></td>
+           <td><button (click)="del(emp.empId)">DELETE</button></td>
+        </tr>
+        <tr></tr>
+    </table>
+    <router-outlet></router-outlet>
+</div>
+

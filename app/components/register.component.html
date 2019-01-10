@@ -1,0 +1,7 @@
+<form [formGroup]="registerForm" (ngSubmit)="clickme()">
+    <input type="text" formControlName="username"><br>
+    <input type="password" formControlName="password"><br>
+    <input type="number" formControlName="salary"><br>
+    <input type="text" formControlName="gender"><br>
+    <input type="button" value="click" (click)="clickme()"><br>
+</form>

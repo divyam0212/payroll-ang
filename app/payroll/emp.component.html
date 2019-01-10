@@ -1,0 +1,35 @@
+{{empObject}}
+{{diagnostics}}
+
+<div class="container">
+    <h1>EMPLOYEE FORM</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">NAME</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="empObject.empName" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input type="text" class="form-control"  id="email" required [(ngModel)]="empObject.empEmail" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">PHONE</label>
+        <input type="text" class="form-control"  id="phone" required [(ngModel)]="empObject.empPhone" name="phone">
+      </div>
+
+      <div class="form-group">
+        <label for="department">DEPARTMENT</label>
+        <select class="form-control" id="department">
+            <option *ngFor="let dept of department" [value]="dept">{{dept}}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+</div>
+<!-- [value]="empObject.empName"
+[value]="empObject.empEmail"
+[value]="empObject.empPhone" -->
